@@ -444,7 +444,7 @@
     // Fetch version.json from Supabase and populate download links
     async function loadVersionInfo() {
       // TODO: Replace with your actual Supabase project URL
-      const SUPABASE_URL = 'https://YOUR_PROJECT_ID.supabase.co';
+      const SUPABASE_URL = 'https://yhpzdjnuqkkcdotfegtm.supabase.co';
       try {
         const res = await fetch(`${SUPABASE_URL}/storage/v1/object/public/app-config/version.json?t=${Date.now()}`);
         if (!res.ok) throw new Error('Failed to fetch version info');
