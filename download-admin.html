@@ -428,19 +428,12 @@
           androidBtn.classList.remove('disabled');
         }
 
-        // iOS — App Store (unlisted)
+        // iOS — App Store (unlisted) — disabled until App Store approval
         const iosVersion = document.getElementById('iosVersion');
         const iosBtn = document.getElementById('iosBtn');
-        // TODO: Replace with actual App Store URL after approval
-        const APP_STORE_URL = info.nativeUpdate?.ios?.appStoreUrl || 'https://apps.apple.com/app/arc-coral-facility/id6762515518';
-        if (info.nativeUpdate && info.nativeUpdate.ios) {
-          iosVersion.textContent = 'Version ' + info.latestVersion;
-          iosBtn.href = APP_STORE_URL;
-          iosBtn.textContent = 'Get on App Store';
-          iosBtn.classList.remove('disabled');
-        } else {
-          iosVersion.textContent = 'Version ' + info.latestVersion;
-        }
+        iosVersion.textContent = 'Version ' + info.latestVersion;
+        iosBtn.textContent = 'Coming soon';
+        // Intentionally kept disabled — re-enable after App Store approval
 
         // Desktop
         document.getElementById('desktopVersion').textContent = 'Version ' + info.latestVersion;
