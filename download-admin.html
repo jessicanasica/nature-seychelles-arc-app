@@ -320,7 +320,7 @@
         <h3>Desktop</h3>
         <p class="platform-label">Windows / macOS / Linux</p>
         <p class="version" id="desktopVersion">Loading...</p>
-        <a href="#" class="download-btn" id="desktopBtn" onclick="promptDesktopPassword(event)">Open Web App</a>
+        <a href="app/" class="download-btn" id="desktopBtn">Open Web App</a>
         <p style="font-size: 12px; color: #86868b; margin-top: 12px;">Open in Chrome or Edge, then click the install icon in the address bar to install as a desktop app.</p>
       </div>
     </div>
@@ -362,8 +362,6 @@
   <script>
     // SHA-256 hash of the download password
     const HASH = 'placeholder_download_hash';
-    // Desktop PWA password hash
-    const DESKTOP_HASH = 'placeholder_desktop_hash';
 
     async function sha256(message) {
       const msgBuffer = new TextEncoder().encode(message);
@@ -376,13 +374,9 @@
     // Remove this after setting the password
     (async () => {
       const downloadPassword = 'arcfacility';
-      const desktopPassword = 'arcfacility1234';
       const h1 = await sha256(downloadPassword);
-      const h2 = await sha256(desktopPassword);
       console.log('Download password hash:', h1);
-      console.log('Desktop password hash:', h2);
       window._HASH = h1;
-      window._DESKTOP_HASH = h2;
     })();
 
     async function checkPassword() {
@@ -397,23 +391,6 @@
         document.getElementById('errorMsg').style.display = 'block';
         document.getElementById('passwordInput').value = '';
         document.getElementById('passwordInput').focus();
-      }
-    }
-
-    async function promptDesktopPassword(e) {
-      e.preventDefault();
-      if (sessionStorage.getItem('arc_desktop_auth') === '1') {
-        window.location.href = 'app/';
-        return;
-      }
-      const pwd = prompt('Enter the desktop app password:');
-      if (!pwd) return;
-      const h = await sha256(pwd);
-      if (h === (window._DESKTOP_HASH || DESKTOP_HASH)) {
-        sessionStorage.setItem('arc_desktop_auth', '1');
-        window.location.href = 'app/';
-      } else {
-        alert('Incorrect password.');
       }
     }
 
