@@ -306,7 +306,6 @@
           </svg>
         </div>
         <h3>iOS</h3>
-        <p class="platform-label">IPA Download</p>
         <p class="version" id="iosVersion">Loading...</p>
         <a href="#" class="download-btn disabled" id="iosBtn">Download IPA</a>
       </div>
@@ -345,13 +344,13 @@
     <div class="install-instructions">
       <h4>🍎 How to install on iOS</h4>
       <ol>
-        <li>Tap <strong>Download IPA</strong> or <strong>Get on App Store</strong> above.</li>
-        <li>If using the App Store, tap <strong>Get</strong> and confirm with Face ID, Touch ID, or your Apple ID password.</li>
+        <li>Tap <strong>Get on App Store</strong> above — you will be redirected to the App Store.</li>
+        <li>Tap <strong>Get</strong> and confirm with Face ID, Touch ID, or your Apple ID password.</li>
         <li>Wait for the app to download and install.</li>
         <li>Open ARC Coral Facility from your Home Screen!</li>
       </ol>
       <div class="safe-note">
-        ✅ This app is developed by ARC/Nature Seychelles for coral reef facility management.
+        ✅ ARC Coral Facility is an official App Store app developed by Nature Seychelles. Updates are delivered automatically through the App Store.
       </div>
     </div>
 
@@ -452,20 +451,18 @@
           androidBtn.classList.remove('disabled');
         }
 
-        // iOS
+        // iOS — App Store (unlisted)
         const iosVersion = document.getElementById('iosVersion');
         const iosBtn = document.getElementById('iosBtn');
-        iosVersion.textContent = 'Version ' + info.latestVersion;
+        // TODO: Replace with actual App Store URL after approval
+        const APP_STORE_URL = info.nativeUpdate?.ios?.appStoreUrl || 'https://apps.apple.com/app/arc-coral-facility/id6762515518';
         if (info.nativeUpdate && info.nativeUpdate.ios) {
-          const appStoreUrl = info.nativeUpdate.ios.appStoreUrl;
-          if (appStoreUrl) {
-            iosBtn.href = appStoreUrl;
-            iosBtn.textContent = 'Get on App Store';
-          } else if (info.nativeUpdate.ios.downloadUrl) {
-            iosBtn.href = info.nativeUpdate.ios.downloadUrl;
-            iosBtn.textContent = 'Download IPA';
-          }
+          iosVersion.textContent = 'Version ' + info.latestVersion;
+          iosBtn.href = APP_STORE_URL;
+          iosBtn.textContent = 'Get on App Store';
           iosBtn.classList.remove('disabled');
+        } else {
+          iosVersion.textContent = 'Version ' + info.latestVersion;
         }
 
         // Desktop
