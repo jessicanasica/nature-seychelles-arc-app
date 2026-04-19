@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapp=self.webpackChunkapp||[]).push([[4726],{4726(s,n,e){e.r(n),e.d(n,{FileOpener:()=>l});const l=(0,e(5083).registerPlugin)("FileOpener")}}]);

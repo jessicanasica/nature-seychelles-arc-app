@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapp=self.webpackChunkapp||[]).push([[8941],{8941(A,n,p){p.r(n),p.d(n,{App:()=>t});const t=(0,p(5083).registerPlugin)("App",{web:()=>p.e(9303).then(p.bind(p,9303)).then(h=>new h.AppWeb)})}}]);
