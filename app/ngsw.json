@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1776597085525,
+  "timestamp": 1776601618788,
   "index": "/nature-seychelles-arc-app/app/index.html",
   "assetGroups": [
     {
@@ -231,7 +231,7 @@
     "/nature-seychelles-arc-app/app/assets/icon/icon-72.png": "36106234e0e1106a3308826d3c78421b0c1a2ead",
     "/nature-seychelles-arc-app/app/assets/icon/icon-96.png": "f1f0b61645f4cf6f1e630a613bf572b3a7e45e47",
     "/nature-seychelles-arc-app/app/assets/natureSeychellesc.png": "09ecd9a8e2fe507d8c3de4dade3b1ae2dadb7544",
-    "/nature-seychelles-arc-app/app/assets/package.json": "6ad7aab8ddc148f15996a755a19048958c6144c2",
+    "/nature-seychelles-arc-app/app/assets/package.json": "a700cb5e81451e5b2b3a30f616e908cb75b69391",
     "/nature-seychelles-arc-app/app/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "/nature-seychelles-arc-app/app/common.af766a4db7dc1978.js": "54ce44b2734c9edd87a9740205f75d46dff46a5c",
     "/nature-seychelles-arc-app/app/index.html": "67051b1b6275660e3f7d6e0f950a5ceb28ecc4cf",
