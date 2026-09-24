@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapp=self.webpackChunkapp||[]).push([[4697],{4697(l,u,a){a.d(u,{StatusBar:()=>e});const e=(0,a(5083).registerPlugin)("StatusBar")}}]);
